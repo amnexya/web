@@ -1,0 +1,25 @@
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      PLANS_PATH: /vault/plans.txt
+    volumes:
+      - ./obsidian-vault:/vault:ro
+    restart: unless-stopped
+
+  obsidian:
+    build:
+      context: .
+      dockerfile: Dockerfile.obsidian
+    profiles: ["sync"]
+    working_dir: /vault
+    command: ["sync", "--path", "/vault", "--continuous"]
+    volumes:
+      - ./obsidian-vault:/vault
+      - obsidian-config:/root/.config
+    restart: unless-stopped
+
+volumes:
+  obsidian-config:

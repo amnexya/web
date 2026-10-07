@@ -1,1 +1,4 @@
-plans_path = "/path/to/plans.txt"
+import os
+
+
+plans_path = os.environ.get("PLANS_PATH", "/path/to/plans.txt")
