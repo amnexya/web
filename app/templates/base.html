@@ -6,6 +6,8 @@
     <title>amnexya</title>
 </head>
 <body>
+    <canvas class="particle-background" aria-hidden="true"></canvas>
     {% block content %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/particles.js') }}"></script>
 </body>
 </html>
