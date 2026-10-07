@@ -1,0 +1,194 @@
+@font-face {
+    font-family:"Terminus";
+    src:url("/static/ttf/TerminusTTFWindows.ttf") format("truetype");
+    font-weight:500;
+    font-style:normal;
+    font-display:swap;
+}
+html {
+    font-family:"Terminus", monospace;
+    scroll-behavior:smooth;
+}
+body {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    background-color:#000000;
+    color:#ddd;
+    overflow-wrap:break-word;
+    max-width:768px;
+    margin:0 auto;
+    line-height:0.9em;
+}
+a {
+    color:#ddd;
+    text-decoration:underline;
+}
+a:hover {
+    color:#fff;
+}
+a:has(> img) {
+  display:inline-block;
+  line-height:0;
+  text-decoration:none;
+}
+h1 {
+    font-size:2em;
+    margin-bottom:0.5em;
+}
+img {
+    place-items:center;
+}
+.container {
+    overflow-wrap:break-word;
+    max-width:768px;
+    margin:0 auto;
+}
+.title {
+    font-size:2em;
+    font-weight:bold;
+    margin:0;
+}
+.subtitle {
+    font-size:0.8em;
+    font-weight:normal;
+    margin:0;
+}
+.pad1 {
+    padding:1em;
+}
+.bg-grd {
+    background:#000000;
+    background:linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(32, 32, 32, 1) 100%);
+    outline:1px solid #333;
+    border-radius:0.2em;
+}
+.col {
+    float:left;
+    width:50%;
+    box-sizing:border-box;
+}
+@media screen and (max-width: 768px) {
+    .col {
+        width:100%;
+    }
+}
+.row:after {
+    content:"";
+    display:table;
+    clear:both;
+}
+.img-ct {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:1em 0;
+}
+.mar2r {
+    margin-right:2em;
+}
+.m1 {
+    margin:1em;
+}
+.grey {
+    color:#555;
+}
+/* this section from https://github.com/sampsyo/emfed, thanks! */
+.toots {
+  max-width: 400px;
+  list-style: none;
+  padding: 0;
+  font-family: "Terminus", monospace;
+}
+.toot {
+  padding: 1rem;
+  margin: 1rem 0;
+  background:#000000;
+  background:linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(32, 32, 32, 1) 100%);
+  outline:1px solid #333;
+  border-radius:0.2em;
+}
+.toot .user {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  align-items: center;
+  min-height: 46px;
+  column-gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+}
+.toot .avatar {
+  grid-row: 1 / -1;
+  border-radius: 4px;
+}
+.toot .display-name {
+  font-weight: bold;
+  display: block;
+  line-height: 1.1;
+}
+.toot .user:hover .display-name {
+  text-decoration: underline;
+}
+.toot .username {
+  display: block;
+  margin-right: 1em;
+  color: #999;
+  line-height: 1.1;
+}
+.toot .boost {
+  height: 23px;
+  margin-bottom: 0.25rem;
+  column-gap: 0.25rem;
+}
+.toot .boost:before {
+  content: "♺";
+  font-size: 140%;
+}
+.toot .boost .username {
+  display: none;
+}
+.toot .permalink {
+  text-decoration: none;
+  display: block;
+  color: #999;
+  float: right;
+}
+.toot .permalink:hover {
+  text-decoration: underline;
+}
+.toot .body {
+  clear: both;
+  margin-top: 1em;
+}
+.toot .body a {
+  overflow-wrap: anywhere;
+}
+.toot .body .invisible {
+  display: inline-block;
+  font-size: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+.toot .body .ellipsis::after {
+  content: "…";
+}
+.toot .attachment {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+}
+.toot .attachment img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* end of attributed section */
+.toot-scrl {
+    max-height: 30em;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
