@@ -1,0 +1,8 @@
+# amnexya - ssh public keys
+# these keys were obtained from amnexya.com/ssh
+# curl https://amnexya.com/ssh >> ~/.ssh/authorized_keys
+
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPely2mOWz1nQKbOG9hZXalBUutSOY+H6eRWfe65yIqX je@amnexya.com
+
+### old, will be removed soon
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCwzA3SkBsHUoVzf2CkBxqe9KnitO8PDp4grA0AKlxjjhVUOacJYdBT07baEFBgjtLo9rQtegCPFESCYzddTO7Fd3iTnfvazCUn5gtEDiD+yGeEMm5s4FSfwsh2imwtLxtxCCDmjVM4luuX8pacfBXmzJzVQu5qvuQhFV1SHYf7KyNlekbNA8SRINxE+aNw76frV4bZpblqYOhWwNXZnfEU36ykSTVsozJ579l0V7ye3LI6tX+T+rPivla/e6tfWjIqugjFS5kH7xzpUec56KwzKJa413XFEJsjED1as3agBfV2K76Ks9iz9Bb8vVrSBtN+ePNzy9CJ8Z6Yh0i1MmMZaAMoiH5oFd7mOuP3HtqM44yQWl3mZjSBus0jXXg6mtcEGec58IbwEpbwLQAz9imFAUB1GFBKPjrBU9z0L06d5PclgFuzsO+TSHb+xOiYBqM3W6nN5qLbFQ9sTaC0XWGTKcmXdKVtpdf5cKseYLVcb7XowW/M0dwKPUl4YUNmwDc= xenia@xenia
