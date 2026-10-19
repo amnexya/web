@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en_GB">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CV</title>
+	<style>
+		/* Define all PT Serif fontfaces */
+		/* Regular */
+		@font-face {
+		    font-family:"PT Serif Regular";
+		    src:url("/static/ttf/PTSerif-Regular.ttf") format("truetype");
+		    font-style:normal;
+		    font-weight:400;
+		    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* Italic */
+		@font-face {
+		  font-family: 'PT Serif Italic';
+		  font-style: italic;
+		  font-weight: 400;
+		  src: url("/static/ttf/PTSerif-Italic.ttf") format("truetype");
+		  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* Bold */
+		@font-face {
+		  font-family: 'PT Serif Bold';
+		  font-style: normal;
+		  font-weight: 700;
+		  src: url("/static/ttf/PTSerif-Bold.ttf") format("truetype");
+		  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		/* Bold Italic */
+		@font-face {
+		  font-family: 'PT Serif Bold Italic';
+		  font-style: italic;
+		  font-weight: 700;
+		  src: url("/static/ttf/PTSerif-BoldItalic.ttf") format("truetype");
+		  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+		}
+
+		h1 {
+			font-weight: 700;
+			line-height: 0.35em;
+		}
+		h2 {
+			font-weight: 700;
+			line-height: 0.35em;
+			font-size: 1em;
+		}
+		h3 {
+			font-weight: 400;
+			line-height: 0.35em;
+			font-size: .9em;
+		}
+		h4 {
+			line-height: 0.35em;
+			font-size: .8em;
+		}
+		h5 {
+			line-height: 0.35em;
+			font-size: .725em;
+		}
+		h6 {
+			line-height: 0.35em;
+		}
+
+		hr {
+			margin:0;
+		}
+		ul {
+			margin: .5em 0 .5em 0;
+			padding-left: 20px;
+		}
+		ul li {
+			font-size: .80em;
+		}
+
+		/* Declare font and scroll behaviour */
+		html {
+			font-family: "PT Serif Regular", "Times", "Times New Roman", "Georgia", serif;
+			scroll-behavior: smooth;
+		}
+		
+		/* Set body styles */
+		body {
+		    margin:0;
+		    padding:0;
+		    background:#fafafa;
+		    color:#010203;
+
+		}
+		/* Create page of A4 size, padding included in the size */
+		.page {
+			box-sizing: border-box;
+			margin: auto;
+			width: 21cm;
+			min-width: 21cm;
+			height: 29.7cm;
+			min-height: 29.7cm;
+			background: #f2f3f4;
+			padding: 2em 1em 1em 2em;
+			box-shadow: 10px 10px 15px #aaaaaa;
+		}
+
+		header {
+			background-color: #333333;
+			color: #f2f3f4;
+			padding: 1em;
+			margin-bottom: 1em;
+		}
+
+		footer {
+			background-color: #333333;
+			color: #f2f3f4;
+			padding: 1em;
+			margin-top: 1em;
+		}
+
+		header a, footer a {
+			color: #f2f3f4;
+			text-decoration: underline;
+		}
+
+		header a:hover, footer a:hover {
+			color: #d2d3d4;
+			text-decoration: underline;
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		.prd {
+			border-bottom: 3px double #010203; padding-bottom: 0.7em;
+		}
+
+		.prs {
+			border-bottom: 1px solid #010203; padding-bottom: 0.5em;
+		}
+
+		.job-title-t {
+			display: flex;
+			justify-content: space-between;
+			font-size: .9em;
+			font-weight: 700;
+		}
+		.job-title-b {
+			display: flex;
+			justify-content: space-between;
+			font-size: .9em;
+			font-style: italic;
+		}
+
+		/* Remove browser print margins */
+		@page {
+			size: A4;
+			margin: 0;
+		}
+
+		@media print {
+			header, footer {
+				display: none;
+			}
+			body {
+				margin: 0;
+				background: none;
+			}
+			.page {
+				margin: 0;
+				box-shadow: none;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		Go back <a href="/">home</a> - Download this as a PDF, click the button: <button onclick="print()">Download CV</button>
+	</header>
+	<div class="page">
+		<div id="header">
+			<h1><b>Jack Eilles</b></h1>
+			<h3>Software Engineer</h3>
+			<h5 class="prd">jack@eilles.xyz | 07377 822998 | Newcastle Upon Tyne, UK | <a href="https://amnexya.com">amnexya.com</a> | <a href="https://github.com/amnexya">github.com/amnexya</a> | <a href="https://linkedin.com/in/jack-eilles-062972248">linkedin.com/in/jack-eilles-062972248</a></h5>
+		</div>
+
+		<div id="workexperience">
+			<h2 class="prs">WORK EXPERIENCE</h2>
+			<div id="durham">
+				<div class="job-title-t">
+					<span>Durham University</span>
+					<span>October 2024 - Present</span>
+				</div>
+				<div class="job-title-b">
+					<span>CIS Intern</span>
+					<span>Durham, UK (Hybrid)</span>
+				</div>
+				<ul>
+					<li>Delivered a process to mitigate malware threats on Durham University's WordPress environment, reducing the amount of sites vulnerable to near zero, with no tickets regarding site takeovers in 9 months.</li>
+					<li>Currently working with Ellucian Banner, responding to and resolving student and staff tickets on TopDesk, editing and fixing database queries, assisting with version control migration projects.</li>
+					<li>Worked across 5 separate teams, gathering experience on different workflows, products, and fields, including AI training with Copilot Studio, bespoke dashboard development with PowerApps, and interacting with Tenable and TopDesk APIs to raise vulnerabilities as new tickets.</li>
+				</ul>
+			</div>
+			<div id="nucats">
+				<div class="job-title-t">
+					<span>Newcastle University Computing and Technology Society</span>
+					<span>August 2026 - Present</span>
+				</div>
+				<div class="job-title-b">
+					<span>Tech Officer</span>
+					<span>Newcastle-upon-Tyne, UK</span>
+				</div>
+				<ul>
+					<li>Built and maintain critical society infrastructure, currently using Proxmox to run multiple society and student owned websites, game servers, docker services (vaultwarden, starlight docs, etc...), internal networks, as well as infrastructure for events when needed.</li>
+					<li>Currently manage a "Tech Team" of 6 members, assign and delegate tasks as needed, such as server maintenance, configuration changes, and ensure good communication across the team.</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="projects">
+			<h2 class="prs">PROJECTS</h2>
+			<div id="pasted">
+				<div class="job-title-t">
+					<span>Pasted.sh</span>
+					<span>March 2025 - Present</span>
+				</div>
+				<div class="job-title-b">
+					<span>Founder</span>
+				</div>
+				<ul>
+					<li>Built and maintain a file hosting and pastebin service using Python with Flask, ensuring security and privacy is the highest priority when using.</li>
+					<li>Encrypt all data at-rest using Fernet, with physical storage locations being scattered around the world, files are not stored on the main server, ensuring data safety in the event of data theft.</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="education">
+			<h2 class="prs">EDUCATION</h2>
+			<div id="uni">
+				<div class="job-title-t">
+					<span>Newcastle University</span>
+					<span>September 2024 - June 2027</span>
+				</div>
+				<div class="job-title-b">
+					<span>BSc Computer Science (Software Engineering)</span>
+					<span>Newcastle-upon-Tyne, UK</span>
+				</div>
+				<ul>
+					<li>Currently studying, anticipated 2:1, aiming for 1:1.</li>
+				</ul>
+			</div>
+			<div id="College">
+				<div class="job-title-t">
+					<span>New College Durham</span>
+					<span>September 2022 - June 2024</span>
+				</div>
+				<div class="job-title-b">
+					<span>T-Level Digital Production, Design, and Development</span>
+					<span>Framwellgate Moor, Durham, UK</span>
+				</div>
+				<ul>
+					<li>Year One: A</li>
+					<ul>
+						<li>Out of (A* - U)</li>
+					</ul>
+					<li>Year Two: Merit</li>
+					<ul>
+						<li>Out of (Distinction*, Distinction, Merit, Pass, Fail)</li>
+					</ul>				
+				</ul>
+			</div>
+		</div>
+
+		<div id="skills">
+			<h2 class="prs">SKILLS</h2>
+			<ul>
+				<li>Languages - Python, Java, SQL, Shell, TypeScript</li>
+				<li>Frameworks - Flask, Discord.py, Tailwind, Svelte, SQLAlchemy</li>
+				<li>Tools - Docker, Linux, Git, VSCode, MySQL, MongoDB, Speedcubing, PowerApps, WordPress, TopDesk, Tenable</li>
+			</ul>
+		</div>
+	</div>
+	<footer>
+		The font used on this page (PT Serif) is licensed under the <a href="/static/ofl.txt">SIL Open Font License</a>.
+	</footer>
+</body>
+</html>

@@ -14,10 +14,22 @@ def index():
     lanyard_profile_picture_url = f'https://cdn.discordapp.com/avatars/{user_id}/{lanyard_data["data"]["discord_user"]["avatar"]}.jpg?size=128'
 
     # Cast types otherwise it looks weird in the template
-    username = str(lanyard_data['data']['discord_user']['username']) 
-    status = str(lanyard_data['data']['activities'][0]['state']) 
-    discord_status = str(lanyard_data['data']['discord_status'])
-    listening_to_spotify = bool(lanyard_data['data']['listening_to_spotify'])
+    try:
+        username = str(lanyard_data['data']['discord_user']['username']) 
+    except:
+        username = "amnexya" # default to current username
+    try:
+        status = str(lanyard_data['data']['activities'][0]['state']) 
+    except:
+        status = "idle" # default to idle
+    try:
+        discord_status = str(lanyard_data['data']['discord_status'])
+    except:
+        discord_status = "api couldn't find my status"
+    try:
+        listening_to_spotify = bool(lanyard_data['data']['listening_to_spotify'])
+    except:
+        listening_to_spotify = False # assume false
 
     # Check if listening_to_spotify is True before trying this
     # otherwise it throws an exception.
@@ -47,4 +59,19 @@ def index():
     except FileNotFoundError:
         plans = "Plans file not found. Sorry :/"
 
-    return render_template('index.html', plans=plans, plans_path=config.plans_path, username=username, status=status, discord_status=discord_status, listening_to_spotify=listening_to_spotify, spotify_album=spotify_album, spotify_album_art_url=spotify_album_art_url, spotify_artist=spotify_artist, spotify_song=spotify_song, lanyard_profile_picture_url=lanyard_profile_picture_url)
+    return render_template('index.html', 
+    plans=plans, 
+    plans_path=config.plans_path, 
+    username=username, 
+    status=status, 
+    discord_status=discord_status, 
+    listening_to_spotify=listening_to_spotify, 
+    spotify_album=spotify_album, 
+    spotify_album_art_url=spotify_album_art_url, 
+    spotify_artist=spotify_artist, 
+    spotify_song=spotify_song, 
+    lanyard_profile_picture_url=lanyard_profile_picture_url)
+
+@app.route('/cv')
+def cv():
+    return render_template('cv.html')
