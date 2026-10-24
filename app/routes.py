@@ -75,3 +75,11 @@ def index():
 @app.route('/cv')
 def cv():
     return render_template('cv.html')
+
+@app.route('/writing')
+def writing():
+    return render_template('writing.html')
+
+@app.route('/writing/egg')
+def egg():
+    return render_template('egg.html')
